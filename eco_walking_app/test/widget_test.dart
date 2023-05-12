@@ -6,7 +6,6 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:eco_walking_app/view/StartView.dart';
-import 'package:eco_walking_app/view/testView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:eco_walking_app/main.dart';
