@@ -19,15 +19,13 @@ class StartView extends StatefulWidget {
 
 class _StartViewState extends State<StartView> {
   int pageIndex = 0;
-  int _currentIndex = 0;
   
   late List<Widget> _widgets = [];
-  @override
 
+  @override
   void initState() {
     _widgets = [
     Container(
-        height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
             color: CustomColors.lightBlue,
@@ -172,24 +170,20 @@ class _StartViewState extends State<StartView> {
         color: CustomColors.lightGreen,
         alignment: Alignment.center,
         child: Column(children: [
-          Column(
-            children: [
-              Text(
-                'ECO WALKING',
-                style: Customfont.title(color: CustomColors.orange),
-              ),
-            ],
+          Text(
+            'ECO WALKING',
+            style: Customfont.title(color: CustomColors.orange),
           ),
+
           const Spacer(),
           SizedBox(
             height: 600,
             width: 500,
             child: ListView(
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.vertical,
               children: _widgets,
             ),
           ),
-          const Spacer(),
         ]));
   }
 }

@@ -1,3 +1,4 @@
+import 'package:eco_walking_app/view/mainView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_walking_app/view/StartView.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const Directionality(textDirection: TextDirection.ltr, child: StartView(),)
+      home: const Directionality(textDirection: TextDirection.ltr, child: MainView(),)
     );
   }
 }
