@@ -30,7 +30,7 @@ class MainView extends StatelessWidget {
         body: TabBarView(
           children: <Widget>[
           const StartView(),
-          secondView(),
+          SecondView(),
         ]),
       ),
     );

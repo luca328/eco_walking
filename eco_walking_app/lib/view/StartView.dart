@@ -1,13 +1,13 @@
 import 'package:eco_walking_app/ecowalkingapp.dart';
-import 'package:eco_walking_app/view/WidgetCard.dart';
+import 'package:eco_walking_app/widget/WidgetCard.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_walking_app/assets/colors/colors.dart';
 import 'package:eco_walking_app/assets/images/images.dart';
 import 'package:eco_walking_app/view/secondView.dart';
 import 'package:eco_walking_app/assets/fonts/font.dart';
-import 'package:eco_walking_app/view/button.dart';
+import 'package:eco_walking_app/widget/button.dart';
+import 'package:eco_walking_app/widget/bottombar.dart';
 import 'package:eco_walking_app/view/descriptionView.dart';
-import 'package:eco_walking_app/view/bottombar.dart';
 import 'package:provider/provider.dart';
 
 
