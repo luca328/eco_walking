@@ -35,7 +35,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyAppState extends ChangeNotifier {
-  int  coins = 3000;
+  int coins = 3000;
+  int steps = 0; 
   void addCoins(int coins) {
     this.coins += coins;
     notifyListeners();
@@ -43,6 +44,15 @@ class MyAppState extends ChangeNotifier {
 
   void buyCoins(int coins) {
     this.coins -= coins;
+    notifyListeners();
+  }
+
+  void resetStep() {
+    this.steps = 0;
+    notifyListeners();
+  }
+  void addStep(int steps) {
+    this.steps += 1;
     notifyListeners();
   }
 }

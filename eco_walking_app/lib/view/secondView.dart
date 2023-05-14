@@ -56,7 +56,7 @@ class SecondView extends StatelessWidget {
               color: Color.fromRGBO(79, 79, 79, 1),
               fontFamily: 'Elza Text',
               fontSize: 10,
-              letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
+              letterSpacing: 0,
               fontWeight: FontWeight.normal,
               height: 1.45
             ),)
@@ -67,9 +67,9 @@ class SecondView extends StatelessWidget {
               color: Color.fromRGBO(0, 0, 0, 1),
               fontFamily: 'Brevia',
               fontSize: 14,
-              letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
+              letterSpacing: 0,
               fontWeight: FontWeight.normal,
-              height: 1.5 /*PERCENT not supported*/
+              height: 1.5
             ),)
             ),Positioned(
               top: 12,
@@ -109,7 +109,7 @@ class SecondView extends StatelessWidget {
               color: Color.fromRGBO(0, 0, 0, 1),
               fontFamily: 'Brevia',
               fontSize: 18,
-              letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
+              letterSpacing: 0 ,
               fontWeight: FontWeight.normal,
               height: 1
             ),)
