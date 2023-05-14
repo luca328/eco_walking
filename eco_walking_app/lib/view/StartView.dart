@@ -1,3 +1,4 @@
+import 'package:eco_walking_app/ecowalkingapp.dart';
 import 'package:eco_walking_app/view/WidgetCard.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_walking_app/assets/colors/colors.dart';
@@ -6,8 +7,8 @@ import 'package:eco_walking_app/view/secondView.dart';
 import 'package:eco_walking_app/assets/fonts/font.dart';
 import 'package:eco_walking_app/view/button.dart';
 import 'package:eco_walking_app/view/descriptionView.dart';
-import 'package:eco_walking_app/view/global_provider.dart';
 import 'package:eco_walking_app/view/bottombar.dart';
+import 'package:provider/provider.dart';
 
 
 class StartView extends StatefulWidget {
@@ -19,11 +20,13 @@ class StartView extends StatefulWidget {
 
 class _StartViewState extends State<StartView> {
   int pageIndex = 0;
+  late dynamic appState;
   
   late List<Widget> _widgets = [];
 
   @override
   void initState() {
+    super.initState();
     _widgets = [
     Container(
         width: double.infinity,
@@ -43,7 +46,7 @@ class _StartViewState extends State<StartView> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DescriptionView(
-                      coins: Globals.coins,
+                      coins: appState.coins,
                       bgImage: CustomImages.greenweez,
                       logo: CustomImages.logoGreenWeez,
                       title: "35% offerts sur tous les produits Greenweez",
@@ -73,7 +76,7 @@ class _StartViewState extends State<StartView> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DescriptionView(
-                      coins: Globals.coins,
+                      coins: appState.coins,
                       bgImage: CustomImages.makeup,
                       logo: CustomImages.blissim,
                       title: "Une box achetée, une box offerte chez Blissim",
@@ -103,7 +106,7 @@ class _StartViewState extends State<StartView> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DescriptionView(
-                      coins: Globals.coins,
+                      coins: appState.coins,
                       bgImage: CustomImages.greenweez,
                       logo: CustomImages.logoGreenWeez,
                       title: "35% offerts sur tous les produits Greenweez",
@@ -133,7 +136,7 @@ class _StartViewState extends State<StartView> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DescriptionView(
-                      coins: Globals.coins,
+                      coins: appState.coins,
                       bgImage: CustomImages.makeup,
                       logo: CustomImages.blissim,
                       title: "Une box achetée, une box offerte chez Blissim",
@@ -162,21 +165,27 @@ class _StartViewState extends State<StartView> {
           ),
         ])),
     ];
-    super.initState();
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
+  appState = context.watch<MyAppState>();
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: Text(
+          style: Customfont.title(color: Colors.black),
+          appState.coins.toString(),
+          ),
+        title: Text(
+          'ECO WALKING',
+          style: Customfont.title(color: Colors.black),
+        ),
+      ),
+      body: Container(
         color: CustomColors.lightGreen,
         alignment: Alignment.center,
-        child: Column(children: [
-          Text(
-            'ECO WALKING',
-            style: Customfont.title(color: CustomColors.orange),
-          ),
-
-          const Spacer(),
-          SizedBox(
+        child: SizedBox(
             height: 600,
             width: 500,
             child: ListView(
@@ -184,16 +193,6 @@ class _StartViewState extends State<StartView> {
               children: _widgets,
             ),
           ),
-        ]));
+        ));
   }
 }
-          // SimpleButton(
-          //   text: "C’est parti !",
-          //   pressed: () {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(builder: (context) => secondView()),
-          //     );
-          //   },
-          //   color: CustomColors.orange,
-          // )

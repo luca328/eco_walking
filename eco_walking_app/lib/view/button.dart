@@ -6,7 +6,6 @@ import 'package:eco_walking_app/view/secondView.dart';
 import 'package:eco_walking_app/assets/fonts/font.dart';
 import 'package:eco_walking_app/view/button.dart';
 import 'package:eco_walking_app/view/descriptionView.dart';
-import 'package:eco_walking_app/view/global_provider.dart';
 
 class SimpleButton extends StatelessWidget {
   const SimpleButton({
