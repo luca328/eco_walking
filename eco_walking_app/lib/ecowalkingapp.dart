@@ -48,11 +48,11 @@ class MyAppState extends ChangeNotifier {
   }
 
   void resetStep() {
-    this.steps = 0;
+    steps = 0;
     notifyListeners();
   }
-  void addStep(int steps) {
-    this.steps += 1;
+  void updateSteps(int newSteps) {
+    steps = newSteps;
     notifyListeners();
   }
 }

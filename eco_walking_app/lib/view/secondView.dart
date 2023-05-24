@@ -154,9 +154,9 @@ class SecondView extends StatelessWidget {
                               color: const Color.fromRGBO(245, 245, 245, 1),
                             ),
                           ),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 'Vous êtes une Germe',
                                 textAlign: TextAlign.left,
@@ -242,9 +242,9 @@ Widget _buildLockedLevel() {
       borderRadius: BorderRadius.circular(10),
       color: Color.fromRGBO(245, 245, 245, 1),
     ),
-    child: Column(
+    child: const Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
+      children: [
         Text(
           'Niveau bloqué',
           textAlign: TextAlign.center,
