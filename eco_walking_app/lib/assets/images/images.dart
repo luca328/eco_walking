@@ -6,4 +6,6 @@ class CustomImages {
   static String greenweez = "lib/assets/images/greenweez.png";
   static String challenge = "lib/assets/images/challenge.png";
   static String recompense = "lib/assets/images/recompense.png";
+  static String eCoinsWhite = "lib/assets/images/ECoinsWhite.png";
+  static String eCoinsGreen = "lib/assets/images/ECoinsGreen.png";
 }

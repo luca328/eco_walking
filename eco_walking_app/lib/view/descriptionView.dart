@@ -158,17 +158,26 @@ class _DescriptionViewState extends State<DescriptionView> {
                     ),
                     primary: Color.fromRGBO(32, 168, 84, 1),
                   ),
-                  child: Text(
-                    'Échanger pour ${widget.points} ${CustomImages.eCoins}',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Color.fromRGBO(255, 255, 255, 1),
-                      fontFamily: 'Elza Text',
-                      fontSize: 14,
-                      letterSpacing: 0,
-                      fontWeight: FontWeight.normal,
-                      height: 1,
-                    ),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Échanger pour ${widget.points}',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                          fontFamily: 'Elza Text',
+                          fontSize: 14,
+                          letterSpacing: 0,
+                          fontWeight: FontWeight.normal,
+                          height: 1,
+                        ),
+                      ),
+                      Image.asset(
+                         CustomImages.eCoinsWhite,
+                         width: 14,
+                         height: 14,
+                      ),
+                    ],
                   ),
                 ),
               ],

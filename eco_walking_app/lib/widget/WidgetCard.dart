@@ -1,3 +1,4 @@
+import 'package:eco_walking_app/assets/images/images.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_walking_app/assets/colors/colors.dart';
 import 'package:eco_walking_app/assets/fonts/font.dart';
@@ -37,11 +38,11 @@ class WidgetCard extends StatelessWidget {
     BuildContext context,
   ) {
     return Container(
-      
       width: width,
       height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: const Color.fromARGB(188, 135, 135, 135)),
         color: Colors.white,
       ),
       child: Stack(
@@ -59,20 +60,34 @@ class WidgetCard extends StatelessWidget {
                   height: 10,
                 ),
                 const Spacer(),
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: titleSize,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                Center(
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: titleSize,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
-                Text(
-                  subTitle,
-                  style: TextStyle(
-                    fontSize: subTitleSize,
-                    color: CustomColors.lightGreen,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      subTitle,
+                      style: TextStyle(
+                        fontSize: subTitleSize,
+                        fontWeight: FontWeight.w700,
+                        color: CustomColors.lightGreen,
+                      ),
+                    ),
+                    Image.asset(
+                      CustomImages.eCoinsGreen,
+                      width: 14,
+                      height: 14,
+                    ),
+                  ],
                 ),
                 const Spacer(),
               ],

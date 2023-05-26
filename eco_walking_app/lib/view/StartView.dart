@@ -61,7 +61,7 @@ class _StartViewState extends State<StartView> {
                   width: 160,
                   height: 333,
                   titleSize: 12,
-                  subTitleSize: 6.54,
+                  subTitleSize: 12,
                   logoBorderSize: 79,
                   logoSize: 79,
                   imageHeight: 166.5,
@@ -91,7 +91,7 @@ class _StartViewState extends State<StartView> {
                   width: 160,
                   height: 333,
                   titleSize: 12,
-                  subTitleSize: 6.54,
+                  subTitleSize: 12,
                   logoBorderSize: 79,
                   logoSize: 79,
                   imageHeight: 166.5,
@@ -116,12 +116,12 @@ class _StartViewState extends State<StartView> {
                 child: WidgetCard(
                   brandImage: CustomImages.greenweez,
                   logo: CustomImages.logoGreenWeez,
-                  subTitle: "Pas besoin de garants",
-                  title: "Garantie appart",
+                  subTitle: "250",
+                  title: "35% offerts sur tous les produits Greenweez",
                   width: 160,
                   height: 333,
                   titleSize: 12,
-                  subTitleSize: 6.54,
+                  subTitleSize: 12,
                   logoBorderSize: 79,
                   logoSize: 79,
                   imageHeight: 166.5,
@@ -151,7 +151,7 @@ class _StartViewState extends State<StartView> {
                   width: 160,
                   height: 333,
                   titleSize: 12,
-                  subTitleSize: 6.54,
+                  subTitleSize: 12,
                   logoBorderSize: 79,
                   logoSize: 79,
                   imageHeight: 166.5,
@@ -170,13 +170,26 @@ class _StartViewState extends State<StartView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Text(
-          style: Customfont.title(color: Colors.black),
-         "${CustomImages.eCoins} ${appState.coins}",
+        leading: Row(
+          children: [
+            Image.asset(
+              CustomImages.eCoins,
+              width: 18,
+              height: 18,
+            ),
+            Text(
+              "${appState.coins}",
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
         title: Center(
           child: Text(
-            'ECO WALKING',
+            'Récompenses',
             style: Customfont.title(color: Colors.black),
           ),
         ),
@@ -185,13 +198,14 @@ class _StartViewState extends State<StartView> {
         color: Colors.transparent,
         alignment: Alignment.center,
         child: SizedBox(
-            height: double.maxFinite,
-            width: double.maxFinite,
-            child: ListView(
-              scrollDirection: Axis.vertical,
-              children: _widgets,
-            ),
+          height: double.maxFinite,
+          width: double.maxFinite,
+          child: ListView(
+            scrollDirection: Axis.vertical,
+            children: _widgets,
           ),
-        ));
+        ),
+      )
+    );
   }
 }
