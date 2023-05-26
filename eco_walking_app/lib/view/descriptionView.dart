@@ -79,17 +79,21 @@ class _DescriptionViewState extends State<DescriptionView> {
           Positioned(
             top: 530,
             left: 30,
-            child: Text(
-              widget.description,
-              textAlign: TextAlign.left,
-              style: const TextStyle(
-                color: Color.fromRGBO(79, 79, 79, 1),
-                fontFamily: 'Elza Text',
-                fontSize: 10,
-                letterSpacing: 0,
-                fontWeight: FontWeight.normal,
-                height: 1.45,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  widget.description,
+                  style: const TextStyle(
+                    color: Color.fromRGBO(79, 79, 79, 1),
+                    fontFamily: 'Elza Text',
+                    fontSize: 10,
+                    letterSpacing: 0,
+                    fontWeight: FontWeight.normal,
+                    height: 1.45,
+                  ),
+                ),
+              ],
             ),
           ),
           Positioned(
@@ -116,7 +120,7 @@ class _DescriptionViewState extends State<DescriptionView> {
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
-                  color: Color.fromRGBO(255, 255, 255, 1),
+                  color: const Color.fromRGBO(255, 255, 255, 1),
                   width: 4,
                 ),
                 borderRadius: const BorderRadius.all(
@@ -131,56 +135,49 @@ class _DescriptionViewState extends State<DescriptionView> {
           ),
           Positioned(
             top: 648,
-            left: 29.5,
-            child: Container(
-              width: 330,
-              height: 40,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(27),
-                color: Color.fromRGBO(32, 168, 84, 1),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 648,
-            left: 29.5,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Coins: ${appState.coins}'),
-                ElevatedButton(
-                  onPressed: appState.coins >= widget.points ? () {
-                    appState.buyCoins(widget.points);
-                  } : null,
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(27),
-                    ),
-                    primary: Color.fromRGBO(32, 168, 84, 1),
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        'Échanger pour ${widget.points}',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontFamily: 'Elza Text',
-                          fontSize: 14,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.normal,
-                          height: 1,
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: appState.coins >= widget.points ? () {
+                        appState.buyCoins(widget.points);
+                      } : null,
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(27),
                         ),
+                        primary: const Color.fromRGBO(32, 168, 84, 1),
                       ),
-                      Image.asset(
-                         CustomImages.eCoinsWhite,
-                         width: 14,
-                         height: 14,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Échanger pour ${widget.points}',
+                            style: const TextStyle(
+                              color: Color.fromRGBO(255, 255, 255, 1),
+                              fontFamily: 'Elza Text',
+                              fontSize: 14,
+                              letterSpacing: 0,
+                              fontWeight: FontWeight.normal,
+                              height: 1,
+                            ),
+                          ),
+                          Image.asset(
+                             CustomImages.eCoinsWhite,
+                             width: 14,
+                             height: 14,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           ),
         ],
