@@ -30,10 +30,7 @@ class _StartViewState extends State<StartView> {
     _widgets = [
     Container(
         width: double.infinity,
-        decoration: const BoxDecoration(
-            color: CustomColors.lightBlue,
-            shape: BoxShape.rectangle,
-        ),
+        color: Colors.white,
         child: Column(children: [
           Wrap(
             alignment: WrapAlignment.spaceEvenly,
@@ -183,11 +180,11 @@ class _StartViewState extends State<StartView> {
         ),
       ),
       body: Container(
-        color: CustomColors.lightGreen,
+        color: Colors.transparent,
         alignment: Alignment.center,
         child: SizedBox(
-            height: 600,
-            width: 500,
+            height: double.maxFinite,
+            width: double.maxFinite,
             child: ListView(
               scrollDirection: Axis.vertical,
               children: _widgets,

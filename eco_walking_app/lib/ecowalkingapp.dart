@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:eco_walking_app/view/StartView.dart';
 import 'package:eco_walking_app/view/secondView.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,6 +12,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+    ]);
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
