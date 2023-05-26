@@ -71,7 +71,7 @@ class WidgetCard extends StatelessWidget {
                   subTitle,
                   style: TextStyle(
                     fontSize: subTitleSize,
-                    color: Colors.black,
+                    color: CustomColors.lightGreen,
                   ),
                 ),
                 const Spacer(),

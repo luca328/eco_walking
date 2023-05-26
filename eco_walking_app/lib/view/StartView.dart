@@ -172,11 +172,13 @@ class _StartViewState extends State<StartView> {
         backgroundColor: Colors.white,
         leading: Text(
           style: Customfont.title(color: Colors.black),
-          appState.coins.toString(),
+         "${CustomImages.eCoins} ${appState.coins}",
+        ),
+        title: Center(
+          child: Text(
+            'ECO WALKING',
+            style: Customfont.title(color: Colors.black),
           ),
-        title: Text(
-          'ECO WALKING',
-          style: Customfont.title(color: Colors.black),
         ),
       ),
       body: Container(

@@ -15,13 +15,13 @@ class MainView extends StatelessWidget {
           child: TabBar(tabs: <Widget>[
             Tab(
               icon: ImageIcon(
-                AssetImage(CustomImages.eCoins,),
+                AssetImage(CustomImages.recompense,),
                 color: Colors.grey,
               ),
             ),
             Tab(
               icon: ImageIcon(
-                AssetImage(CustomImages.eCoins,),
+                AssetImage(CustomImages.challenge,),
                 color: Colors.grey,
               ),
             ),
