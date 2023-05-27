@@ -10,42 +10,21 @@ import 'package:latlong2/latlong.dart';
 import 'package:geolocator/geolocator.dart';
 
 class MapView extends StatefulWidget {
+  const MapView({Key? key}) : super(key: key);
   @override
-  State<MapView> createState() => _MapViewState();
+  MapViewState createState() => MapViewState();
 }
 
-class _MapViewState extends State<MapView> {
-  late dynamic appState;
-  late LatLng currentLocation = LatLng(0, 0);
-
-  @override
-  void initState() {
-    super.initState();
-    getLocation();
-  }
-
-  void getLocation() async {
-    await Geolocator.checkPermission();
-    await Geolocator.requestPermission();
-
-    Position position = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high,
-    );
-
-    double latitude = position.latitude;
-    double longitude = position.longitude;
-
-    setState(() {
-      currentLocation = LatLng(latitude, longitude); // Mettez à jour currentLocation
-    });
-  }
+class MapViewState extends State<MapView> {
+  
+    LatLng currentLocation = LatLng(45.8991, 6.1295);
 
   @override
   Widget build(BuildContext context) {
-    appState = context.watch<MyAppState>();
     return Scaffold(
-      body: SizedBox(
-        child: FlutterMap(
+      body: Stack(
+        children: [
+         FlutterMap(
           options: MapOptions(
             center: currentLocation, // Utilisez currentLocation ici
             zoom: 13.0,
@@ -58,23 +37,31 @@ class _MapViewState extends State<MapView> {
             MarkerLayer(
               markers: [
                 Marker(
-                  point: LatLng(45.8991, 6.1295),
+                  point: LatLng(45.9000, 6.1195),
                   width: 25,
                   height: 35,
                   builder: (context) =>
-                      Image.asset('lib/assets/images/icons/Marker.png'),
+                      Image.asset('lib/assets/images/Marker.png'),
                 ),
                 Marker(
                   point: LatLng(45.9091, 6.1395),
                   width: 25,
                   height: 35,
                   builder: (context) =>
-                      Image.asset('lib/assets/images/icons/Marker2.png'),
+                      Image.asset('lib/assets/images/Marker2.png'),
+                ),
+                Marker(
+                  point: LatLng(45.9091, 6.1195),
+                  width: 25,
+                  height: 35,
+                  builder: (context) =>
+                      Image.asset('lib/assets/images/Marker.png'),
                 ),
               ],
             ),
           ],
         ),
+        ],
       ),
     );
   }
