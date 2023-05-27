@@ -100,38 +100,38 @@ class _DescriptionViewState extends State<DescriptionView> {
             top: 0,
             left: 0,
             child: Container(
-              width: 390,
-              height: 317,
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(114, 114, 114, 1),
-              ),
-              child: Image.asset(
-                widget.bgImage,
-                fit: BoxFit.cover,
-              ),
+            width: 390,
+            height: 317,
+            decoration: const BoxDecoration(
+              color: Color.fromRGBO(114, 114, 114, 1),
             ),
+            child: Image.asset(
+              widget.bgImage,
+              fit: BoxFit.cover,
+            ),
+          ),
           ),
           Positioned(
             top: 252,
             left: 130,
             child: Container(
-              width: 130,
-              height: 130,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(
-                  color: const Color.fromRGBO(255, 255, 255, 1),
-                  width: 4,
-                ),
-                borderRadius: const BorderRadius.all(
-                  Radius.elliptical(130, 130),
-                ),
+            width: 130,
+            height: 130,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                color: const Color.fromRGBO(255, 255, 255, 1),
+                width: 4,
               ),
-              child: Image.asset(
-                widget.logo,
-                fit: BoxFit.cover,
+              borderRadius: const BorderRadius.all(
+                Radius.elliptical(130, 130),
               ),
             ),
+            child: Image.asset(
+              widget.logo,
+              fit: BoxFit.cover,
+            ),
+          ),
           ),
           Positioned(
             top: 648,
