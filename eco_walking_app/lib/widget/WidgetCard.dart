@@ -19,6 +19,7 @@ class WidgetCard extends StatelessWidget {
 
   const WidgetCard({
     super.key,
+    //paramètre requis pour le widget
     required this.brandImage,
     required this.logo,
     required this.subTitle,
@@ -51,6 +52,7 @@ class WidgetCard extends StatelessWidget {
             alignment: Alignment.center,
             child: Column(
               children: [
+                //paramètre de l'image de fond
                 Image.asset(
                   brandImage,
                   width: imageWidth,
@@ -60,6 +62,7 @@ class WidgetCard extends StatelessWidget {
                   height: 10,
                 ),
                 const Spacer(),
+                //paraètre du titre
                 Center(
                   child: Text(
                     title,
@@ -71,6 +74,7 @@ class WidgetCard extends StatelessWidget {
                     ),
                   ),
                 ),
+                //paramètre du sous titre avec le logo ecoins
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -93,6 +97,7 @@ class WidgetCard extends StatelessWidget {
               ],
             ),
           ),
+          //paramètre du logo
           Padding(
             padding: const EdgeInsets.only(top: 15),
             child: Center(

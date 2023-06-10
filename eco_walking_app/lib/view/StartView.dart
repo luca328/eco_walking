@@ -28,6 +28,7 @@ class _StartViewState extends State<StartView> {
   void initState() {
     super.initState();
     _widgets = [
+    //containeur de tout les widgetcard
     Container(
         width: double.infinity,
         color: Colors.white,
@@ -38,11 +39,13 @@ class _StartViewState extends State<StartView> {
             runSpacing: 5,
             spacing: 10,
             children: [
+              //intéraction aved le widget redirige vers la page description
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => DescriptionView(
+                      //paramètre passé à la page description
                       coins: appState.coins,
                       bgImage: CustomImages.greenweez,
                       logo: CustomImages.logoGreenWeez,
@@ -53,6 +56,7 @@ class _StartViewState extends State<StartView> {
                       )),
                   );
                 },
+                //utilisation du widget card dont je passe plusieurs paramètres
                 child: WidgetCard(
                   brandImage: CustomImages.greenweez,
                   logo: CustomImages.logoGreenWeez,
@@ -68,6 +72,7 @@ class _StartViewState extends State<StartView> {
                   imageWidth: 160,
                 ),
               ),
+              //intéraction aved le widget redirige vers la page description
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -83,6 +88,7 @@ class _StartViewState extends State<StartView> {
                       )),
                   );
                 },
+                //utilisation du widget card dont je passe plusieurs paramètres
                 child: WidgetCard(
                   brandImage: CustomImages.makeup,
                   logo: CustomImages.blissim,
@@ -98,6 +104,8 @@ class _StartViewState extends State<StartView> {
                   imageWidth: 160,
                 ),
               ),
+
+              //intéraction aved le widget redirige vers la page description
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -113,6 +121,7 @@ class _StartViewState extends State<StartView> {
                       )),
                   );
                 },
+                //utilisation du widget card dont je passe plusieurs paramètres
                 child: WidgetCard(
                   brandImage: CustomImages.greenweez,
                   logo: CustomImages.logoGreenWeez,
@@ -128,6 +137,7 @@ class _StartViewState extends State<StartView> {
                   imageWidth: 160,
                 ),
               ),
+              //intéraction aved le widget redirige vers la page description
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -143,6 +153,7 @@ class _StartViewState extends State<StartView> {
                       )),
                   );
                 },
+                //utilisation du widget card dont je passe plusieurs paramètres
                 child: WidgetCard(
                   brandImage: CustomImages.makeup,
                   logo: CustomImages.blissim,
@@ -172,11 +183,13 @@ class _StartViewState extends State<StartView> {
         backgroundColor: Colors.white,
         leading: Row(
           children: [
+            //logo ecoins
             Image.asset(
               CustomImages.eCoins,
               width: 18,
               height: 18,
             ),
+            //nombre de coins restant
             Text(
               "${appState.coins}",
               style: const TextStyle(
@@ -187,6 +200,7 @@ class _StartViewState extends State<StartView> {
             ),
           ],
         ),
+        //titre
         title: Center(
           child: Text(
             'Récompenses',
@@ -194,6 +208,7 @@ class _StartViewState extends State<StartView> {
           ),
         ),
       ),
+      //body de la page
       body: Container(
         color: Colors.transparent,
         alignment: Alignment.center,

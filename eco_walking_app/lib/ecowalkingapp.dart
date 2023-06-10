@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+//fonction globale pour l'app
 class MyAppState extends ChangeNotifier {
   int coins = 3000;
   int steps = 0; 

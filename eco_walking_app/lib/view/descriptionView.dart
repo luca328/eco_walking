@@ -16,6 +16,7 @@ class DescriptionView extends StatefulWidget {
   
 
   DescriptionView({
+    //paramètre requis pour la page
     required this.bgImage,
     required this.logo,
     required this.title,
@@ -44,6 +45,7 @@ class _DescriptionViewState extends State<DescriptionView> {
       color: Colors.white,
       child: Stack(
         children: <Widget>[
+          //paramètre du titre de la page description
           Positioned(
             top: 422,
             left: 32,
@@ -63,6 +65,7 @@ class _DescriptionViewState extends State<DescriptionView> {
           Positioned(
             top: 492,
             left: 30,
+            //paramètre du nom de la marque
             child: Text(
               widget.brand,
               textAlign: TextAlign.left,
@@ -83,6 +86,7 @@ class _DescriptionViewState extends State<DescriptionView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
+                  //paramètre du texte de la description
                   widget.description,
                   style: const TextStyle(
                     color: Color.fromRGBO(79, 79, 79, 1),
@@ -105,6 +109,7 @@ class _DescriptionViewState extends State<DescriptionView> {
             decoration: const BoxDecoration(
               color: Color.fromRGBO(114, 114, 114, 1),
             ),
+            //paramètre de l'image de fond
             child: Image.asset(
               widget.bgImage,
               fit: BoxFit.cover,
@@ -127,6 +132,7 @@ class _DescriptionViewState extends State<DescriptionView> {
                 Radius.elliptical(130, 130),
               ),
             ),
+            //paramètre du logo
             child: Image.asset(
               widget.logo,
               fit: BoxFit.cover,
@@ -143,6 +149,7 @@ class _DescriptionViewState extends State<DescriptionView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    //bouton pour acheter les ecoins
                     ElevatedButton(
                       onPressed: appState.coins >= widget.points ? () {
                         appState.buyCoins(widget.points);
@@ -156,6 +163,7 @@ class _DescriptionViewState extends State<DescriptionView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          //text avec logo ecoins
                           Text(
                             'Échanger pour ${widget.points}',
                             style: const TextStyle(

@@ -30,10 +30,12 @@ class MapViewState extends State<MapView> {
             zoom: 13.0,
           ),
           children: [
+            //propiété de la carte
             TileLayer(
               urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
               userAgentPackageName: 'com.example.app',
             ),
+            //propriété des markers
             MarkerLayer(
               markers: [
                 Marker(
